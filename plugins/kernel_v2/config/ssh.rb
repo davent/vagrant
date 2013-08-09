@@ -12,6 +12,7 @@ module VagrantPlugins
       attr_accessor :max_tries
       attr_accessor :shell
       attr_accessor :timeout
+      attr_accessor :request_pty
 
       attr_reader :default
 
@@ -25,6 +26,7 @@ module VagrantPlugins
         @max_tries  = UNSET_VALUE
         @shell      = UNSET_VALUE
         @timeout    = UNSET_VALUE
+        @request_pty    = UNSET_VALUE
 
         @default    = SSHConnectConfig.new
       end
@@ -46,6 +48,7 @@ module VagrantPlugins
         @max_tries  = nil if @max_tries == UNSET_VALUE
         @shell      = nil if @shell == UNSET_VALUE
         @timeout    = nil if @timeout == UNSET_VALUE
+        @request_pty    = nil if @request_pty == UNSET_VALUE
 
         @default.finalize!
       end
